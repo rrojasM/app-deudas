@@ -35,7 +35,7 @@ const Registro = ({ navigation }) => {
                     <View style={styles.box}>
                         <View style={styles.monto}>
                             <View style={styles.separador}>
-                                <Text style={styles.label}>Ingrese Monto!</Text>
+                                <Text style={styles.label}>Ingrese Monto:</Text>
                                 <TextInput style={styles.input}
                                     keyboardType='numeric'
                                     textAlign='center'
@@ -43,7 +43,7 @@ const Registro = ({ navigation }) => {
                             </View>
 
                             <View style={styles.separador}>
-                                <Text style={styles.label}>Descripción</Text>
+                                <Text style={styles.label}>Descripción:</Text>
                                 <TextInput style={styles.input}
                                     keyboardType='default'
                                     textAlign='center'

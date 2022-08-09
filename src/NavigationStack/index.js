@@ -3,21 +3,31 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ListaDeuda from '../screen/ListaDeuda';
 import Registro from '../screen/Registro';
+import Login from '../screen/Login';
 
 const Stack = createNativeStackNavigator();
 const Index = () => {
     return (
         <>
-
             <NavigationContainer>
                 <Stack.Navigator
-                    initialRouteName='Registro'
+                    initialRouteName='Login'
+                    screenOptions={{
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            backgroundColor: '#04244B'
+                        },
+                        headerTintColor: '#FFF',
+                        headerTitleStyle: {
+                            fontWeight: 'bold'
+                        }
+                    }}
                 >
                     <Stack.Screen name='Registro' component={Registro} options={{ headerShown: false }} />
                     <Stack.Screen name='Listado' component={ListaDeuda} />
+                    <Stack.Screen name='Login' component={Login} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>
-
         </>
     )
 }
