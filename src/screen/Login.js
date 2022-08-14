@@ -1,42 +1,44 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, Dimensions, Image, TextInput } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, Dimensions, Image, TextInput, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 const Login = ({ navigation }) => {
     const login = () => {
         navigation.navigate('Registro');
     }
     return (
-        <View style={styles.container}>
-            <View style={styles.box}>
-                <View style={styles.containerImage}>
-                    <Image
-                        style={styles.image}
-                        source={require('../assets/iniciarSesion.png')}
-                    />
-                </View>
-                <Text style={styles.title}>Iniciar Sesión</Text>
-                <View style={styles.separador}>
-                    <Text style={styles.label}>Usuario:</Text>
-                    <TextInput style={styles.input}
-                        keyboardType='default'
-                        textAlign='center'
-                    />
-                </View>
-                <View style={styles.separador}>
-                    <Text style={styles.label}>Contraseña:</Text>
-                    <TextInput style={styles.input}
-                        keyboardType='visible-password'
-                        textAlign='center'
-                    />
-                </View>
-                <View style={styles.containerLogin}>
-                    <TouchableOpacity onPress={login} style={styles.buttonLogin}>
-                        <Text style={{ textTransform: 'uppercase', fontSize: 23, textAlign:'center', color: '#FFF' }}>Iniciar</Text>
-                    </TouchableOpacity>
-                </View>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.container}>
+                <View style={styles.box}>
+                    <View style={styles.containerImage}>
+                        <Image
+                            style={styles.image}
+                            source={require('../assets/iniciarSesion.png')}
+                        />
+                    </View>
+                    <Text style={styles.title}>Iniciar Sesión</Text>
+                    <View style={styles.separador}>
+                        <Text style={styles.label}>Usuario:</Text>
+                        <TextInput style={styles.input}
+                            keyboardType='default'
+                            textAlign='center'
+                        />
+                    </View>
+                    <View style={styles.separador}>
+                        <Text style={styles.label}>Contraseña:</Text>
+                        <TextInput style={styles.input}
+                            keyboardType='visible-password'
+                            textAlign='center'
+                        />
+                    </View>
+                    <View style={styles.containerLogin}>
+                        <TouchableOpacity onPress={login} style={styles.buttonLogin}>
+                            <Text style={{ textTransform: 'uppercase', fontSize: 23, textAlign: 'center', color: '#FFF' }}>Iniciar</Text>
+                        </TouchableOpacity>
+                    </View>
 
+                </View>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }
 const styles = StyleSheet.create({
@@ -55,7 +57,15 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').height - 40,
         padding: 10,
         top: 10,
-        alignContent: 'center'
+        alignContent: 'center',
+        shadowColor: "#5D6D7E",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.32,
+        shadowRadius: 5.46,
+        elevation: 9,
     },
     title: {
         textAlign: 'center',
@@ -73,7 +83,7 @@ const styles = StyleSheet.create({
         marginVertical: 70
     },
     buttonLogin: {
-        backgroundColor: '#5D6D7E',
+        backgroundColor: '#154360',
         width: 150,
         height: 50,
         borderRadius: 5,
@@ -85,21 +95,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'column-reverse',
         flex: 2,
-        marginVertical:80,
+        marginVertical: 80,
     },
     label: {
         fontSize: 25,
-        fontWeight: '700',
+        fontWeight: 'normal',
         textAlign: 'left',
         bottom: 10
     },
     input: {
-        backgroundColor: '#154360',
         borderRadius: 5,
-        borderColor: '#000',
+        borderColor: '#154360',
+        borderWidth: 2,
         height: 45,
         width: Dimensions.get('window').width - 40,
-        color: '#FFF',
+        color: '#000',
         fontSize: 20,
         justifyContent: 'center'
     },

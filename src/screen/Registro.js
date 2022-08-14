@@ -100,14 +100,14 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 25,
-        fontWeight: '700',
+        fontWeight: 'normal',
         textAlign: 'left',
-        color: '#34495E',
+       
     },
     input: {
-        backgroundColor: '#154360',
         borderRadius: 5,
-        borderColor: '#000',
+        borderWidth: 2,
+        borderColor: '#154360',
         height: 45,
         width: Dimensions.get('screen').width - 50,
         top: 10,

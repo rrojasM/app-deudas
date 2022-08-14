@@ -24,7 +24,7 @@ const Index = () => {
                     }}
                 >
                     <Stack.Screen name='Registro' component={Registro} options={{ headerShown: false }} />
-                    <Stack.Screen name='Listado' component={ListaDeuda} />
+                    <Stack.Screen name='Listado' component={ListaDeuda} options={{headerTitle:'Listado'}} />
                     <Stack.Screen name='Login' component={Login} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>
